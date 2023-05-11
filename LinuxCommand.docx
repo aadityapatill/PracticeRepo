@@ -1,0 +1,60 @@
+File Management
+
+ls -l
+ls ch*.doc
+ls -a
+
+Creating Files
+
+vi filename
+
+Display Content of a File
+
+cat filename
+
+cat -b filename
+1   This is unix file....I created it for the first time.....
+2   I'm going to save this content in this file.
+
+Copying Files
+
+$ cp source_file destination_file
+
+Renaming Files
+mv old_file new_file
+
+Deleting Files
+$ rm filename 
+$ rm filename1 filename2 filename3
+
+Directory Management
+
+$pwd  cd . ..  ls mkdir -p  rmdir
+
+File Permission / Access Modes
+
+chmod o+wx testfile
+$chmod o+wx,u-x,g = rx testfile
+
+0	No permission	               ---
+1	Execute permission	--x
+2	Write permission	-w-
+3	Execute and write permission: 1 (execute) + 2 (write) = 3	-wx
+4	Read permission	r--
+5	Read and execute permission: 4 (read) + 1 (execute) = 5	r-x
+6	Read and write permission: 4 (read) + 2 (write) = 6	rw-
+7	All permissions: 4 (read) + 2 (write) + 1 (execute) = 7	rwx
+
+Changing Owners and Groups
+
+Environment
+
+$TEST="Unix Programming"
+               $echo $TEST
+               It produces the following result.
+Unix Programming
+
+  Basic Utilities - Printing, Email
+
+ 
+
