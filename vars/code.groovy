@@ -1,4 +1,9 @@
-def cloneFromBranch(String branch, String goal, String cred, String email) {
+def cloneFromBranch(Map params) {
+    def branch = params.branch
+    def goal = params.goal
+    def cred = params.cred
+    def email = params.email
+	
     if (branch == "main" || branch == "master") {
       git branch: '$branch', url: 'https://github.com/aadityapatill/PracticeRepo'
     } else {
