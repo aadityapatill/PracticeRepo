@@ -6,7 +6,7 @@
         steps {
           cleanWs()
           script {
-            gitCheckout(branch: pipelineParams.branch,  url: "//https://github.com/aadityapatill/PracticeRepo")
+            gitCheckout(branch: pipelineParams.branch,  url: "https://github.com/aadityapatill/PracticeRepo")
           }
         }
       }
