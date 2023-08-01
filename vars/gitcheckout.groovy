@@ -9,17 +9,6 @@
           }
         }
       }
-      stage('run web test cases') {
-        steps {
-          script {
-            if (url == null) {
-                  error("Missing 'url' parameter!")
-                       return
-                }
-            bat "mvn --version"
-          }
-        }
-      }
    }
   }
  }
