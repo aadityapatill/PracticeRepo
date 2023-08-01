@@ -1,8 +1,5 @@
  def call(Map pipelineParams) {
   pipeline {
-    agent {
-      label pipelineParams.agent
-    }
     stages {
       stage('git clone') {
         steps {
