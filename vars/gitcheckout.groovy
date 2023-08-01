@@ -1,22 +1,27 @@
-  def call(Map params) {
-    def branch = params.branch
-    def url = params.url
-    def env = params.env
- checkout([
-        $class: 'GitSCM',
-        branches: [[name:  stageParams.branch ]],
-        userRemoteConfigs: [[ url: stageParams.url ]]
-    ])
-
-    if (url == null) {
-        error("Missing 'url' parameter!")
-        return
+ def call(Map pipelineParams) {
+  pipeline {
+    agent {
+      label pipelineParams.agent
     }
-
-    if (env == null) {
-        error("Missing 'env' parameter!")
-        return
-    }
-  
-    echo "Testing branch: ${branch}, URL: ${url}, Environment: ${env}"
-}
+    stages {
+      stage('git clone') {
+        steps {
+          cleanWs()
+          script {
+            gitCheckout(branch: pipelineParams.branch,  url: "//https://github.com/aadityapatill/PracticeRepo")
+          }
+        }
+      }
+      stage('run web test cases') {
+        steps {
+          script {
+            if (url == null) {
+                  error("Missing 'url' parameter!")
+                       return
+                }
+            bat "mvn --version"
+          }
+        }
+      }
+  }
+   
