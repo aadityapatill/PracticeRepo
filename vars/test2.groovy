@@ -4,7 +4,7 @@ def call(Map params) {
     def env = params.env
 
    if (branch == "main" || branch == "master") {
-      git branch: '$branch', url: 'https://github.com/aadityapatill/PracticeRepo'
+      git branch: '$branch', url: '$url'
     } else {
         println "skipping clone as branch '$branch' is not 'main' or 'master'"
     }
