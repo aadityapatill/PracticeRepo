@@ -3,6 +3,8 @@ def call(Map params) {
     def url = params.url
     def env = params.env
 
+     bat 'mvn --version'      
+
    if (branch == "main" || branch == "master") {
       git branch: '$branch', url: '$url'
     } else {
