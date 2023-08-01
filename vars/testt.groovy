@@ -5,7 +5,7 @@ def call(Map params) {
 
    if (branch == "main" || branch == "master") {
       //git branch: '$branch', url: '$url'
-       bat 'git clone $url .'
+       bat "git clone ${url} ."
     } else {
         println "skipping clone as branch '$branch' is not 'main' or 'master'"
     }
