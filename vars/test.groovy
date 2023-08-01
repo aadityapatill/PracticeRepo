@@ -18,6 +18,6 @@ def call(Map params) {
         return
     }
   
-    echo "Testing branch: ${branch}, URL: ${url}, Language: ${env}"
+    echo "Testing branch: ${branch}, URL: ${url}, Environment: ${env}"
 }
 
