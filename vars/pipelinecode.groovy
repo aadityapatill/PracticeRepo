@@ -1,10 +1,10 @@
-def myPipeline(Map params) {
+def myPipeline(Map params) {  
+    pipeline {
+        agent any
     def branch = params.version
     def test = params.test
     def deployServer = params.deployServer  
-    def notification = params.notification  
-    pipeline {
-        agent any
+    def notification = params.notification
         stages {
             stage('install dependencies') {
                 steps {
