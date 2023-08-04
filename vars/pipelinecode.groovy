@@ -1,18 +1,22 @@
 def myPipeline(Map params) {
+    def branch = params.version
+    def test = params.test
+    def deployServer = params.deployServer  
+    def notification = params.notification  
     pipeline {
         agent any
         stages {
             stage('install dependencies') {
                 steps {
-                    echo "Building with version : ${params.version}"
+                    echo "Building with version : ${version}"
                 }
             }
 
             stage('Test') {
                 steps {
-                    echo "Running ${params.test} tests..."
+                    echo "Running ${test} tests..."
                     script {
-                        switch (params.test) {
+                        switch (test) {
                             case 'unit':
                                 echo 'Running Unit Tests...'
                                 break
@@ -29,7 +33,7 @@ def myPipeline(Map params) {
 
             stage('Deploy') {
                 steps {
-                    echo "Deploying to ${params.deployServer} server..."
+                    echo "Deploying to ${deployServer} server..."
                     script {
                         switch (params.deployServer) {
                             case 'staging':
@@ -48,7 +52,7 @@ def myPipeline(Map params) {
 
             stage('Notification') {
                 script {
-                        switch (params.notification) {
+                        switch (notification) {
                             case 'team and email':
                                 echo 'Sent to mail and team...'
                                 break
