@@ -1,4 +1,4 @@
-def myPipeline(Map params) {  
+def call myPipeline(Map params) {  
     pipeline {
         agent any
     def branch = params.version
