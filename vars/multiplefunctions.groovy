@@ -10,6 +10,26 @@ def getCurrentBuildNumber() {
     return env.BUILD_NUMBER
 }
 
+def mavenAction(String action) {
+    switch (action) {
+        case "clean":
+            echo "Executing 'mvn clean'..."
+            //bat 'mvn clean'
+            break
+        case "package":
+            echo "Executing 'mvn package'..."
+            //bat 'mvn package'
+            break
+        case "install":
+            echo "Executing 'mvn install'..."
+            //bat 'mvn install'
+            break
+        default:
+            echo "Invalid Maven action: ${action}. No action taken."
+            break
+    }
+}
+
 def printMessage(String message) {
     echo "Message: ${message}"
 }
