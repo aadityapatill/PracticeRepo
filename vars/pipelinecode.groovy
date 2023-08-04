@@ -47,6 +47,7 @@ def call (Map params) {
             }
 
             stage('Notification') {
+                steps {
                 script {
                         switch (params.notification) {
                             case 'team and email':
@@ -60,6 +61,7 @@ def call (Map params) {
                                 break
                         }
                     }
+                }   
             }
         }
     }
