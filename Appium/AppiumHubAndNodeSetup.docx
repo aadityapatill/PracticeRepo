@@ -1,0 +1,13 @@
+Create a hub-config.json 
+
+Run the Appium server with appium-device-farm plugin enabled.
+  appium server -ka 800 --use-plugins=device-farm --config ./hub-config.json -pa /wd/hub
+
+Node:
+Node is a remote machine that consists of devices and appium server running with device-farm active. 
+It receives requests from the hub in the form of W3C test commands and executes them using WebDriver
+
+Create a node-config.json
+
+Run the Appium server with appium-device-farm plugin enabled in the Node machine.
+  appium server -ka 800 --use-plugins=device-farm --config ./node-config.json -pa /wd/hub
